@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700);/* Mobile Screens */
+/* Mobile Screens */
 
 #drop-down-menu,
 #drop-down-toggle-menu {
@@ -200,15 +200,4 @@ a.parent {
     #drop-down-menu li:hover>input[type="checkbox"] + .sub-menu {
         display: block;
     }
-}body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a {
-  font-family: "Poppins", sans-serif;
 }
-

@@ -5,13 +5,22 @@
 @section('content')
 
     <div class="row justify-content-center">
-        <div class="col-md-11">
-            <div class="card">
 
-                <div class="card-header"></div>
+        <div class="col-xl-9 col-md-8">
+            <div class="card content-box">
+                
+                <div class="card-body">
+                    main
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-4">
+            <div class="card content-box">
 
                 <div class="card-body">
-                    main page
+                    sidebar
                 </div>
 
             </div>

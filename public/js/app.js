@@ -38,7 +38,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.site-search[data-v-5d338cfa] {\n    z-index: 1500;\n    position: fixed;\n    top: 12px;\n    right: 28px;\n}\n.search-field[data-v-5d338cfa] {\n    height: 45px;\n    width: 200px;\n    border-radius: 12px;\n    border-style: none;\n    border: 1px solid rgba(0, 0, 0, 0.125);\n    padding-left: 36px;\n    font-size: 16px;\n}\ni[data-v-5d338cfa] {\n    position: relative;\n    top: 3px;\n    left: 35px;\n    font-size: 21px;\n}\n@media only screen and (max-width: 1199px) {\n.site-search[data-v-5d338cfa] {\n        top: 9px;\n        right: 55px;\n}\n}\n@media only screen and (max-width: 520px) {\n.search-field[data-v-5d338cfa] {\n        width: 180px;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.site-search[data-v-5d338cfa] {\n    z-index: 1500;\n    position: fixed;\n    top: 12px;\n    right: 28px;\n}\n.search-field[data-v-5d338cfa] {\n    height: 45px;\n    width: 200px;\n    border-radius: 12px;\n    border-style: none;\n    border: 1px solid rgba(0, 0, 0, 0.125);\n    padding-left: 36px;\n    font-size: 16px;\n    color: #343a40;\n}\ni[data-v-5d338cfa] {\n    position: relative;\n    top: 3px;\n    left: 35px;\n    font-size: 21px;\n}\n@media only screen and (max-width: 1199px) {\n.site-search[data-v-5d338cfa] {\n        top: 9px;\n        right: 55px;\n}\n}\n@media only screen and (max-width: 520px) {\n.search-field[data-v-5d338cfa] {\n        width: 180px;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -148,13 +148,21 @@ var app = new Vue({
 $(document).ready(function () {
   $(window).resize(function () {
     var siteContent = $('#site-content');
+    var siteTopHeight = $('#drop-down-menu').height();
+    var siteBottomHeight = $('#site-bottom').height();
+    var siteContentMarginTop = 12;
+    var footerOffset = 138;
 
     if (window.innerWidth > 1199) {
-      var siteTopHeight = $('#drop-down-menu').height();
-      siteContent.css('margin-top', "".concat(siteTopHeight, "px"));
+      siteContentMarginTop = siteTopHeight;
     } else {
-      siteContent.css('margin-top', '12px');
+      siteContentMarginTop = 12;
     }
+
+    footerOffset = siteContentMarginTop + siteBottomHeight;
+    var siteContentMinHeight = window.innerHeight - footerOffset;
+    siteContent.css('margin-top', "".concat(siteContentMarginTop, "px"));
+    siteContent.css('min-height', "".concat(siteContentMinHeight, "px"));
   });
   $(window).scroll(function () {});
 });

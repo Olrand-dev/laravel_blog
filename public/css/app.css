@@ -216,7 +216,12 @@ a.parent {
     #drop-down-menu li:hover>input[type="checkbox"] + .sub-menu {
         display: block;
     }
-}body,
+}body {
+  color: #343a40;
+  background-color: #f2f4f5;
+}
+
+body,
 h1,
 h2,
 h3,
@@ -240,7 +245,7 @@ a {
 }
 
 .site-logo .name {
-  width: 238px;
+  width: 200px;
   margin-left: 5px;
   position: relative;
   top: 2px;
@@ -295,6 +300,23 @@ a {
 @media screen and (min-width: 1600px) {
   #site-content {
     width: 1500px;
+  }
+}
+
+.content-box {
+  border-radius: 0;
+  padding: 10px 12px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.content-box .card-body {
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .content-box {
+    margin-top: 12px;
   }
 }
 

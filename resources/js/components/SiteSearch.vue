@@ -34,6 +34,7 @@
         border: 1px solid rgba(0, 0, 0, 0.125);
         padding-left: 36px;
         font-size: 16px;
+        color: #343a40;
     }
 
     i {

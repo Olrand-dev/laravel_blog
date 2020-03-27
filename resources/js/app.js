@@ -36,15 +36,23 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         let siteContent = $('#site-content');
+        let siteTopHeight = $('#drop-down-menu').height();
+        let siteBottomHeight = $('#site-bottom').height();
+
+        let siteContentMarginTop = 12;
+        let footerOffset = 138;
         
         if (window.innerWidth > 1199) {
-
-            let siteTopHeight = $('#drop-down-menu').height();
-            siteContent.css('margin-top', `${siteTopHeight}px`);
+            siteContentMarginTop = siteTopHeight;
         } else {
-
-            siteContent.css('margin-top', '12px');
+            siteContentMarginTop = 12;
         }
+
+        footerOffset = siteContentMarginTop + siteBottomHeight;
+        let siteContentMinHeight = window.innerHeight - footerOffset;
+
+        siteContent.css('margin-top', `${siteContentMarginTop}px`);
+        siteContent.css('min-height', `${siteContentMinHeight}px`);
     });
 
     $(window).scroll(function () {

@@ -16,5 +16,71 @@ h5,
 h6,
 p,
 a {
-    font-family: "Poppins", sans-serif;
+    font-family: $font-family-sans-serif;
+}
+
+.site-logo {
+    z-index: 1500;
+    position: fixed;
+    top: 10px;
+    left: 21px;
+
+    .icon {
+        width: 50px;
+    }
+
+    .name {
+        width: 238px;
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.site-logo-mobile {
+    z-index: 1500;
+    position: relative;
+    bottom: 9px;
+
+    .icon {
+        width: 45px;
+    }
+    
+    .name {
+        width: 180px;
+        margin-left: 3px;
+        position: relative;
+        top: 3px;
+
+        @media screen and (max-width: 520px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 520px) {
+        right: 8px;
+    }
+}
+
+#site-content {
+    margin-top: 80px;
+    min-height: calc(100vh - 138px);
+
+    @media screen and (max-width: 1200px) {
+        margin-top: 12px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: 1500px;
+    }
+}
+
+.footer {
+    padding: 15px 25px 20px;
+    background-color: $dark;
+    color: $gray;
 }

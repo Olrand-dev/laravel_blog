@@ -19,7 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('site-search', require('./components/SiteSearch.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +29,25 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+});
+
+
+$(document).ready(function () {
+
+    $(window).resize(function () {
+        let siteContent = $('#site-content');
+        
+        if (window.innerWidth > 1199) {
+
+            let siteTopHeight = $('#drop-down-menu').height();
+            siteContent.css('margin-top', `${siteTopHeight}px`);
+        } else {
+
+            siteContent.css('margin-top', '12px');
+        }
+    });
+
+    $(window).scroll(function () {
+        
+    });
 });

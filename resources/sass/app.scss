@@ -7,6 +7,7 @@
 // CSS
 @import url('../css/drop-down-menu.css');
 
+
 body {
     color: $dark;
     background-color: #f2f4f5;
@@ -24,21 +25,19 @@ a {
     font-family: $font-family-sans-serif;
 }
 
+input {
+    background-color: $white;
+}
+
+
 .site-logo {
     z-index: 1500;
     position: fixed;
     top: 10px;
     left: 21px;
 
-    .icon {
-        width: 50px;
-    }
-
-    .name {
-        width: 200px;
-        margin-left: 5px;
-        position: relative;
-        top: 2px;
+    img {
+        width: 185px;
     }
 
     @media screen and (max-width: 1200px) {
@@ -51,17 +50,21 @@ a {
     position: relative;
     bottom: 9px;
 
-    .icon {
-        width: 45px;
-    }
-    
-    .name {
+    .full {
         width: 180px;
-        margin-left: 3px;
-        position: relative;
-        top: 3px;
+        bottom: 1px;
 
         @media screen and (max-width: 520px) {
+            display: none;
+        }
+    }
+    
+    .icon {
+        width: 51px;
+        position: relative;
+        bottom: 1px;
+
+        @media screen and (min-width: 519px) {
             display: none;
         }
     }
@@ -70,6 +73,43 @@ a {
         right: 8px;
     }
 }
+
+
+.site-search {
+    z-index: 1500;
+    position: fixed;
+    top: 12px;
+    right: 28px;
+
+    .search-field {
+        height: 45px;
+        width: 200px;
+        border-radius: 12px;
+        border-style: none;
+        border: 1px solid $gray-light;
+        padding-left: 36px;
+        font-size: 16px;
+        color: $dark;
+
+        @media screen and (max-width: 520px) {
+            width: 180px;
+        }
+    }
+    
+    i {
+        position: relative;
+        top: 3px;
+        left: 35px;
+        font-size: 21px;
+    }
+
+    @media screen and (max-width: 1199px) {
+        position: absolute;
+        top: 9px;
+        right: 55px;
+    }
+}
+
 
 #site-content {
     margin-top: 80px;
@@ -84,20 +124,96 @@ a {
     }
 }
 
+
+.btn {
+    border-radius: 0;
+    font-weight: 500;
+    margin: 5px 3px;
+
+    &.lg {
+        padding: 15px 25px;
+        font-size: 21px;
+    }
+
+    &.btn-main {
+        color: $white;
+        background-color: $brand-orange-light;
+        border-color: $brand-orange-light;
+
+        &:hover {
+            background-color: $dark;
+            border-color: $dark;
+        }
+    }
+
+    &.btn-add {
+        color: $white;
+        background-color: $brand-red;
+        border-color: $brand-red;
+
+        &:hover {
+            background-color: $dark;
+            border-color: $dark;
+        }
+    }
+
+    &.btn-def {
+        color: $dark;
+        background-color: $gray-light;
+        border-color: $gray-light;
+
+        &:hover {
+            color: $white;
+            background-color: $brand-red;
+            border-color: $brand-red;
+        }
+    }
+}
+
+
 .content-box {
     border-radius: 0;
     padding: 10px 12px;
     box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid $gray-light;
+    background-color: $white;
 
     .card-body {
         padding: 0;
+    }
+
+    .box-header {
+        line-height: 40px;
+        background-color: $gray-soft;
+        padding-left: 15px;
+        font-size: 19px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-left: 5px solid $brand-orange;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-top: 15px;
+        font-weight: 300;
+        font-size: 18px;
+
+        a {
+            color: $brand-orange;
+            font-weight: 400;
+    
+            &:hover {
+                text-decoration: none;
+                color: $brand-red;
+            }
+        }
     }
 
     @media screen and (max-width: 767px) {
         margin-top: 12px;
     }
 }
+
 
 .footer {
     padding: 15px 25px 20px;

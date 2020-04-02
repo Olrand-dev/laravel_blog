@@ -64,7 +64,7 @@ a.parent {
 #drop-down-toggle-menu,
 #drop-down-menu .sub-menu {
     border-style: solid;
-    border-color: rgba(0, 0, 0, .1);
+    border-color: #dfdfdf;
 }
 
 #drop-down-menu li,
@@ -149,11 +149,8 @@ a.parent {
         width: 100%;
         position: fixed;
         top: 0;
-    }
-
-    #drop-down-menu {
-        padding-left: 360px;
-        padding-right: 236px;
+        padding-left: 255px;
+        padding-right: 235px;
     }
 
     #drop-down-menu,

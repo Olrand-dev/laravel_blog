@@ -29,8 +29,7 @@
         <header id="site-top">
 
             <div class="site-logo">
-                <img class="icon" src="{{ asset('img/logo.png') }}" alt="">
-                <img class="name" src="{{ asset('img/logo_name_dark_sm.png') }}" alt="">
+                <img src="{{ asset('img/logo_oww.png') }}" alt="">
             </div>
 
             <site-search></site-search>
@@ -40,8 +39,8 @@
                 <label for="tm" id="drop-down-toggle-menu">
 
                     <div class="site-logo-mobile">
+                        <img class="full" src="{{ asset('img/logo_oww.png') }}" alt="">
                         <img class="icon" src="{{ asset('img/logo.png') }}" alt="">
-                        <img class="name" src="{{ asset('img/logo_name_dark_sm.png') }}" alt="">
                     </div>
 
                     <span class="drop-icon bars-icon">
@@ -132,11 +131,11 @@
         </header>
         
 
-        <main id="site-content" class="container-fluid py-4">
+        <div id="site-content" class="container-fluid py-4">
 
-            @yield('content')
+            @yield('content-layout')
 
-        </main>
+        </div>
 
 
         <footer id="site-bottom">

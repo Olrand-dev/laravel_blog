@@ -143,7 +143,7 @@
             <div class="container-fluid footer">
                 <div class="row">
                     <div class="col-md-12 d-flex justify-content-center">
-                        &copy; Stack Progress ({{ date('Y') }})
+                        &copy; Olrand Web Workshop ({{ date('Y') }})
                     </div>
                 </div>
             </div>

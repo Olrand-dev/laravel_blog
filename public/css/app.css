@@ -230,6 +230,10 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 input {
   background-color: #fff;
 }
@@ -348,6 +352,11 @@ input {
   margin: 5px 3px;
 }
 
+.btn.md {
+  padding: 12px 21px;
+  font-size: 19px;
+}
+
 .btn.lg {
   padding: 15px 25px;
   font-size: 21px;
@@ -422,7 +431,6 @@ input {
 }
 
 .content-box p a:hover {
-  text-decoration: none;
   color: #FF2B65;
 }
 
@@ -430,6 +438,163 @@ input {
   .content-box {
     margin-top: 12px;
   }
+}
+
+.content-collection {
+  margin-bottom: 25px;
+}
+
+.content-collection .card {
+  padding: 0;
+  max-width: 320px;
+  border: none;
+  margin-top: 15px;
+}
+
+.content-collection .card .card-img-top {
+  margin-bottom: 15px;
+}
+
+.content-collection .card .card-title a {
+  color: #383838;
+}
+
+.content-collection .card .card-title a:hover {
+  color: #FF2B65;
+}
+
+.content-collection .card .card-info div {
+  margin-bottom: 3px;
+}
+
+.content-collection .card .card-info .statistics div {
+  margin-left: 10px;
+  color: #7e7e7e;
+}
+
+.content-collection .card .card-info .date {
+  color: #b1b1b1;
+}
+
+.content-collection .card .card-info .tags {
+  color: #FF2B65;
+}
+
+.content-collection .card .card-info .tags i {
+  font-size: 16px;
+  position: relative;
+  top: 4px;
+  margin-right: 5px;
+}
+
+.content-collection .card .card-info .tags .tag {
+  margin-right: 5px;
+}
+
+.content-collection .card .card-info a {
+  color: #FF2B65;
+  font-weight: 300;
+}
+
+.content-collection .card .card-info a:hover {
+  color: #383838;
+}
+
+.content-collection .card .card-text {
+  margin-top: 5px;
+  font-size: 17px;
+}
+
+.pagination {
+  margin: 15px 0;
+}
+
+.pagination .page-link {
+  padding: 14px 20px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  border-color: #dfdfdf;
+  color: #7e7e7e;
+}
+
+.pagination .page-link.active {
+  background-color: #ff7839;
+  border-color: #ff7839;
+  color: #fff;
+}
+
+.pagination .page-link.active:hover {
+  background-color: #ff7839;
+  border-color: #ff7839;
+}
+
+.pagination .page-link.inactive,
+.pagination .page-link.inactive:hover {
+  background-color: #f3f3f3;
+  border-color: #dfdfdf;
+  color: #dfdfdf;
+  cursor: not-allowed;
+}
+
+.pagination .page-link:hover {
+  background-color: #b1b1b1;
+  border-color: #b1b1b1;
+  color: #fff;
+}
+
+.vertical-menu ul {
+  width: 100%;
+}
+
+.vertical-menu .nav-item {
+  cursor: pointer;
+}
+
+.vertical-menu .nav-link.marker-blue {
+  border-left: 5px solid #3490dc !important;
+}
+
+.vertical-menu .nav-link.flat {
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  color: #ff631c;
+}
+
+.vertical-menu .nav-link.flat:hover {
+  color: #FF2B65;
+}
+
+.vertical-menu .nav-link[data-toggle] {
+  border: 1px solid #dfdfdf;
+}
+
+.vertical-menu .nav-link[data-toggle].inner {
+  border-top: none;
+}
+
+.vertical-menu .nav-link[data-toggle] .icon {
+  position: relative;
+  top: 3px;
+  right: 0;
+  font-size: 21px;
+  color: #383838;
+}
+
+.vertical-menu .nav-link[data-toggle].collapsed .open {
+  display: inline;
+}
+
+.vertical-menu .nav-link[data-toggle].collapsed .closed {
+  display: none;
+}
+
+.vertical-menu .nav-link[data-toggle]:not(.collapsed) .open {
+  display: none;
+}
+
+.vertical-menu .nav-link[data-toggle]:not(.collapsed) .closed {
+  display: inline;
 }
 
 .footer {

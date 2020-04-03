@@ -25,6 +25,10 @@ a {
     font-family: $font-family-sans-serif;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 input {
     background-color: $white;
 }
@@ -130,6 +134,11 @@ input {
     font-weight: 500;
     margin: 5px 3px;
 
+    &.md {
+        padding: 12px 21px;
+        font-size: 19px;
+    }
+
     &.lg {
         padding: 15px 25px;
         font-size: 21px;
@@ -203,7 +212,6 @@ input {
             font-weight: 400;
     
             &:hover {
-                text-decoration: none;
                 color: $brand-red;
             }
         }
@@ -211,6 +219,167 @@ input {
 
     @media screen and (max-width: 767px) {
         margin-top: 12px;
+    }
+}
+
+
+.content-collection {
+    margin-bottom: 25px;
+
+    .card {
+        padding: 0;
+        max-width: 320px;
+        border: none;
+        margin-top: 15px;
+
+        .card-img-top {
+            margin-bottom: 15px;
+        }
+
+        .card-title a {
+            color: $dark;
+
+            &:hover {
+                color: $brand-red;
+            }
+        }
+
+        .card-info {
+            div {
+                margin-bottom: 3px;
+            }
+            .statistics div {
+                margin-left: 10px;
+                color: $gray-dark;
+            }
+            .date {
+                color: $gray;
+            }
+            .tags {
+                color: $brand-red;
+                i {
+                    font-size: 16px;
+                    position: relative;
+                    top: 4px;
+                    margin-right: 5px;
+                }
+                .tag {
+                    margin-right: 5px;
+                }
+            }
+            a {
+                color: $brand-red;
+                font-weight: 300;
+
+                &:hover {
+                    color: $dark;
+                }
+            }
+        }
+
+        .card-text {
+            margin-top: 5px;
+            font-size: 17px;
+        }
+    }
+}
+
+
+.pagination {
+    margin: 15px 0;
+
+    .page-link {
+        padding: 14px 20px 10px;
+        font-size: 18px;
+        font-weight: 600;
+        border-color: $gray-light;
+        color: $gray-dark;
+
+        &.active {
+            background-color: $brand-orange-light;
+            border-color: $brand-orange-light;
+            color: $white;
+            &:hover {
+                background-color: $brand-orange-light;
+                border-color: $brand-orange-light;
+            }
+        }
+
+        &.inactive, &.inactive:hover {
+            background-color: $gray-soft;
+            border-color: $gray-light;
+            color: $gray-light;
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            background-color: $gray;
+            border-color: $gray;
+            color: $white;
+        }
+    }
+}
+
+
+.vertical-menu {
+
+    ul {
+        width: 100%;
+    }
+
+    .nav-item {
+        cursor: pointer;
+    }
+
+    .nav-link {
+
+        &.marker-blue {
+            border-left: 5px solid $blue !important;
+        }
+
+        &.flat {
+            border-left: 1px solid $gray-light;
+            border-right: 1px solid $gray-light;
+            border-bottom: 1px solid $gray-light;
+            color: $brand-orange;
+        
+            &:hover {
+                color: $brand-red;
+            }
+        }
+
+        &[data-toggle] {
+            border: 1px solid $gray-light;
+
+            &.inner {
+                border-top: none;
+            }
+
+            .icon {
+                position: relative;
+                top: 3px;
+                right: 0;
+                font-size: 21px;
+                color: $dark;
+            }
+        
+            &.collapsed {
+                .open {
+                    display: inline;
+                }
+                .closed {
+                    display: none;
+                }
+            }
+            &:not(.collapsed) {
+                .open {
+                    display: none;
+                }
+                .closed {
+                    display: inline;
+                }
+            }
+        }
     }
 }
 

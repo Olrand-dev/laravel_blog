@@ -8,6 +8,10 @@
 @import url('../css/drop-down-menu.css');
 
 
+@mixin all-transition($duration, $type: linear) {
+    transition: all $duration $type;
+}
+
 body {
     color: $dark;
     background-color: #f2f4f5;
@@ -30,8 +34,36 @@ a:hover {
 }
 
 input {
-    background-color: $white;
+    background-color: $white !important;
+    color: $dark !important;
+    font-weight: 300 !important;
+
+    &[type="text"], 
+    &[type="password"],
+    &[type="email"] {
+        border-radius: 0;
+        border: 1px solid $grey-light;
+        padding: 0 10px;
+        min-height: 42px;
+    }
 }
+select {
+    border: 1px solid $grey-light !important;
+    height: 42px !important;
+    color: $dark !important;
+    font-weight: 300 !important;
+    cursor: pointer;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $brand-red;
+    background-color: $brand-red;
+    transition: none;
+}
+.custom-checkbox {
+    .custom-control-label::before {
+        border-radius: 0;
+    }
+}  
 
 
 .site-logo {
@@ -90,7 +122,7 @@ input {
         width: 200px;
         border-radius: 12px;
         border-style: none;
-        border: 1px solid $gray-light;
+        border: 1px solid $grey-light;
         padding-left: 36px;
         font-size: 16px;
         color: $dark;
@@ -168,8 +200,8 @@ input {
 
     &.btn-def {
         color: $dark;
-        background-color: $gray-light;
-        border-color: $gray-light;
+        background-color: $grey-light;
+        border-color: $grey-light;
 
         &:hover {
             color: $white;
@@ -184,7 +216,7 @@ input {
     border-radius: 0;
     padding: 10px 12px;
     box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.15);
-    border: 1px solid $gray-light;
+    border: 1px solid $grey-light;
     background-color: $white;
 
     .card-body {
@@ -193,7 +225,7 @@ input {
 
     .box-header {
         line-height: 40px;
-        background-color: $gray-soft;
+        background-color: $grey-soft;
         padding-left: 15px;
         font-size: 19px;
         font-weight: 500;
@@ -250,10 +282,10 @@ input {
             }
             .statistics div {
                 margin-left: 10px;
-                color: $gray-dark;
+                color: $grey-dark;
             }
             .date {
-                color: $gray;
+                color: $grey;
             }
             .tags {
                 color: $brand-red;
@@ -292,8 +324,8 @@ input {
         padding: 14px 20px 10px;
         font-size: 18px;
         font-weight: 600;
-        border-color: $gray-light;
-        color: $gray-dark;
+        border-color: $grey-light;
+        color: $grey-dark;
 
         &.active {
             background-color: $brand-orange-light;
@@ -306,15 +338,15 @@ input {
         }
 
         &.inactive, &.inactive:hover {
-            background-color: $gray-soft;
-            border-color: $gray-light;
-            color: $gray-light;
+            background-color: $grey-soft;
+            border-color: $grey-light;
+            color: $grey-light;
             cursor: not-allowed;
         }
 
         &:hover {
-            background-color: $gray;
-            border-color: $gray;
+            background-color: $grey;
+            border-color: $grey;
             color: $white;
         }
     }
@@ -322,6 +354,7 @@ input {
 
 
 .vertical-menu {
+    margin-bottom: 15px;
 
     ul {
         width: 100%;
@@ -336,11 +369,29 @@ input {
         &.marker-blue {
             border-left: 5px solid $blue !important;
         }
+        &.marker-purple {
+            border-left: 5px solid $purple !important;
+        }
+        &.marker-red {
+            border-left: 5px solid $red !important;
+        }
+        &.marker-orange {
+            border-left: 5px solid $orange !important;
+        }
+        &.marker-yellow {
+            border-left: 5px solid $yellow !important;
+        }
+        &.marker-green {
+            border-left: 5px solid $green !important;
+        }
+        &.marker-pink {
+            border-left: 5px solid $pink !important;
+        }
 
         &.flat {
-            border-left: 1px solid $gray-light;
-            border-right: 1px solid $gray-light;
-            border-bottom: 1px solid $gray-light;
+            border-left: 1px solid $grey-light;
+            border-right: 1px solid $grey-light;
+            border-bottom: 1px solid $grey-light;
             color: $brand-orange;
         
             &:hover {
@@ -349,7 +400,7 @@ input {
         }
 
         &[data-toggle] {
-            border: 1px solid $gray-light;
+            border: 1px solid $grey-light;
 
             &.inner {
                 border-top: none;
@@ -384,8 +435,29 @@ input {
 }
 
 
+.tags-box {
+
+    .tag {
+        display: inline-block;
+        background-color: $grey-soft;
+        color: $grey-dark;
+        font-size: 14px;
+        padding: 4px 10px;
+        margin-right: 5px;
+        margin-bottom: 6px;
+
+        &:hover {
+            background-color: $brand-red;
+            color: $white;
+        }
+
+        @include all-transition(.3s, ease-out);
+    }
+}
+
+
 .footer {
     padding: 15px 25px 20px;
     background-color: $dark;
-    color: $gray;
+    color: $grey;
 }

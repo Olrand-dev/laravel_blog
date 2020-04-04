@@ -7,23 +7,79 @@
     <div class="card content-box">
         
         <div class="card-body">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <i class="fas fa-home home-icon"></i>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </nav>
             
             <div class="box-header">
                 Some header
             </div>
 
+            <h1>Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur eos cupiditate 
-                distinctio dolor accusamus architecto deleniti iure aspernatur aperiam, ex nobis excepturi 
+                Lorem <b>ipsum dolor sit amet</b> consectetur <i>adipisicing elit</i>. Officiis tenetur eos cupiditate 
+                distinctio <b>dolor accusamus</b> architecto deleniti iure aspernatur aperiam, ex nobis excepturi 
                 magni dolore quae ipsam repudiandae cumque neque?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur eos cupiditate 
                 distinctio <a href="#">dolor accusamus architecto</a> deleniti iure aspernatur aperiam, ex nobis excepturi 
                 magni dolore quae ipsam repudiandae cumque neque?
             </p>
 
-            <button type="button" class="btn btn-main">Primary</button>
-            <button type="button" class="btn md btn-main">Primary</button>
-            <button type="button" class="btn lg btn-main">Primary</button>
+            <div class="helper-box danger">
+
+                <i class="box-icon fas fa-exclamation-circle"></i>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic adipisci soluta non doloribus quos 
+                    suscipit minima voluptatibus a excepturi temporibus pariatur, enim repellat praesentium tempore 
+                    laudantium necessitatibus iure aliquid similique.
+                </p>
+            </div>
+
+            <div class="helper-box warning color-border">
+
+                <i class="box-icon fas fa-exclamation-circle"></i>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic adipisci soluta non doloribus quos 
+                    suscipit minima voluptatibus a excepturi temporibus pariatur, enim repellat praesentium tempore 
+                    laudantium necessitatibus iure aliquid similique.
+                </p>
+            </div>
+
+            <div class="helper-box info">
+
+                <i class="box-icon fas fa-question-circle"></i>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic adipisci soluta non doloribus quos 
+                    suscipit minima voluptatibus a excepturi temporibus pariatur, enim repellat praesentium tempore 
+                    laudantium necessitatibus iure aliquid similique.
+                </p>
+            </div>
+
+            <button type="button" class="btn btn-main">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Primary
+            </button>
+            <button type="button" class="btn md btn-main">
+                <span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+                Primary
+            </button>
+            <button type="button" class="btn lg btn-main">
+                <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+                Primary
+            </button>
             <button type="button" class="btn btn-add">Additional</button>
             <button type="button" class="btn lg btn-add">Additional</button>
             <button type="button" class="btn btn-def">Additional</button>
@@ -40,19 +96,28 @@
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
                     <input type="email" class="form-control" id="inputEmail4">
+                    <small id="emailHelpBlock" class="form-text text-green">
+                        Good email!
+                    </small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Password</label>
                     <input type="password" class="form-control" id="inputPassword4">
+                    <small id="passwordHelpBlock" class="form-text text-grey">
+                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                    </small>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <small id="emailHelpBlock" class="form-text text-red">
+                    Validation error!
+                </small>
             </div>
             <div class="form-group">
                 <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" readonly>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -77,6 +142,45 @@
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
                       </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Example file input</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-primary" role="alert">
+                        A simple primary alert—check it out!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-secondary" role="alert">
+                        A simple secondary alert—check it out!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-success" role="alert">
+                        A simple success <a href="#" class="alert-link">an example link</a> alert—check it out!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-danger" role="alert">
+                        A simple danger <a href="#" class="alert-link">an example link</a> alert—check it out!
+                    </div>
                 </div>
             </div>
 

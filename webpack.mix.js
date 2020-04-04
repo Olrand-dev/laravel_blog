@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js').extract();
+mix.js('resources/js/prism.js', 'public/js');
 
 mix.sass('resources/sass/app.scss', 'public/css')
    .sass('resources/sass/vendor.scss', 'public/css');

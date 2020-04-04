@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/vendor.css": "/css/vendor.css",
     "/js/manifest.js": "/js/manifest.js",
+    "/js/prism.js": "/js/prism.js",
     "/js/vendor.js": "/js/vendor.js"
 }

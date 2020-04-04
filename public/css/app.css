@@ -314,6 +314,12 @@ textarea {
   border-radius: 0;
 }
 
+code[class*=language-],
+pre[class*=language-] {
+  background-color: #f3f3f3;
+  margin: 15px 0;
+}
+
 .alert .alert-link {
   font-weight: 600;
 }

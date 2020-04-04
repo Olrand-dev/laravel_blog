@@ -68,6 +68,104 @@
                 </p>
             </div>
 
+
+            <pre class="line-numbers"><code class="language-sass">
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700");
+
+// Variables
+@import 'variables';
+
+// CSS
+@import url('../css/drop-down-menu.css');
+
+
+@mixin all-transition($duration, $type: linear) {
+    transition: all $duration $type;
+}
+@mixin base-link-style {
+    a {
+        color: $brand-orange;
+        font-weight: 400;
+
+        &:hover {
+            color: $brand-red;
+        }
+    }
+}
+
+
+body {
+    color: $dark;
+    background-color: #f2f4f5;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: $font-family-sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+b {
+    font-weight: 500;
+}
+
+i {
+    font-weight: 200;
+}
+            </code></pre>
+
+            <pre class="line-numbers"><code class="language-php">
+namespace App;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+class User extends Authenticatable
+{
+    use Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+}
+            </code></pre>
+
+
             <button type="button" class="btn btn-main">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Primary
@@ -108,6 +206,7 @@
                     </small>
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
@@ -115,10 +214,12 @@
                     Validation error!
                 </small>
             </div>
+
             <div class="form-group">
                 <label for="inputAddress2">Address 2</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" readonly>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputCity">City</label>
@@ -136,6 +237,7 @@
                     <input type="text" class="form-control" id="inputZip">
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="form-check">
                     <div class="custom-control custom-checkbox">
@@ -144,10 +246,12 @@
                       </div>
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Example textarea</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
+            
             <div class="form-group">
                 <label for="exampleFormControlFile1">Example file input</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1">

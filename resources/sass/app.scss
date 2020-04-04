@@ -113,6 +113,13 @@ textarea {
 }
 
 
+code[class*="language-"],
+pre[class*="language-"] {
+    background-color: $grey-soft;
+    margin: 15px 0;
+}
+
+
 .alert {
 
     .alert-link {

@@ -17,9 +17,10 @@ class CreatePagesTable extends Migration
             $table->id();
             $table->string('title', 150);
             $table->string('slug', 100);
+            $table->string('image')->nullable();
             $table->text('content');
-            $table->integer('views');
-            $table->boolean('is_published');
+            $table->integer('views')->default(0);
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
     }

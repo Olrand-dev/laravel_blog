@@ -1,1 +1,3 @@
 [Wed Apr 08 11:22:38.015340 2020] [core:error] [pid 2493] [client 127.0.0.1:49925] AH00037: Symbolic link not allowed or link target not accessible: /Applications/XAMPP/htdocs/laravel/olrand-dev/public/storage, referer: http://olrand.local/admin
+[Sat Apr 18 06:47:20 2020] [crit] [client 127.0.0.1] configuration error:  couldn't perform authentication. AuthType not set!: /
+[Sat Apr 18 06:52:12 2020] [crit] [client 127.0.0.1] configuration error:  couldn't perform authentication. AuthType not set!: /

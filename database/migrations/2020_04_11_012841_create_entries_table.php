@@ -15,15 +15,15 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('chapter_id')->nullable();
-            $table->foreignId('category_id');
-            $table->foreignId('user_id');
+            $table->foreignId('chapter_id')->default(0);
+            $table->foreignId('category_id')->default(0);
+            $table->foreignId('user_id')->default(1);
             $table->string('title', 191);
-            $table->string('slug', 100)->nullable();
+            $table->string('slug', 100);
             $table->text('excerpt')->nullable();
             $table->text('content');
-            $table->integer('views');
-            $table->boolean('is_published');
+            $table->integer('views')->default(0);
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
     }

@@ -2060,7 +2060,7 @@ Prism.languages.twig = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/olrand/DEV/Laravel/projects/blog/resources/js/prism.js */"./resources/js/prism.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/olrand-dev/resources/js/prism.js */"./resources/js/prism.js");
 
 
 /***/ })

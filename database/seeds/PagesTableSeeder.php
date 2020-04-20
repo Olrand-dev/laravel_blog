@@ -12,6 +12,10 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Page::class, 5)->create();
+        $parent = factory(Page::class)->create();
+        $parent->children()->createMany(factory(Page::class, 3)->raw());
+        $parent->save();
+
+        factory(Page::class, 3)->create();
     }
 }

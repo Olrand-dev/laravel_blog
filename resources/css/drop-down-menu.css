@@ -35,6 +35,7 @@
 
 .sub-menu li {
     text-transform: none;
+    line-height: 24px;
 }
 
 .drop-icon i {
@@ -85,13 +86,22 @@ a.parent {
 
 #drop-down-menu li,
 #drop-down-toggle-menu,
-#drop-down-menu a {
+#drop-down-menu a,
+#drop-down-menu span.no-url {
     position: relative;
     display: block;
 }
 
+#drop-down-menu span.no-url {
+    cursor: pointer;
+}
+#drop-down-menu span.no-url .el-text {
+    margin-right: 15px;
+}
+
 #drop-down-toggle-menu,
-#drop-down-menu a {
+#drop-down-menu a,
+#drop-down-menu span.no-url {
     padding: 1em 1.5em;
 }
 
@@ -99,7 +109,8 @@ a.parent {
     padding-right: 35px !important;
 }
 
-#drop-down-menu a {
+#drop-down-menu a,
+#drop-down-menu span.no-url {
     transition: all .125s ease-in-out;
     -webkit-transition: all .125s ease-in-out;
 }
@@ -177,6 +188,10 @@ a.parent {
         height: 70px;
         line-height: 38px;
     }
+    .sub-menu li {
+        line-height: 25px !important;
+        height: auto !important;
+    }
 
     .main-menu > li:first-child {
         border-left-width: 1px !important;
@@ -192,7 +207,7 @@ a.parent {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 12em;
+        width: 15em;
         z-index: 3000;
     }
 

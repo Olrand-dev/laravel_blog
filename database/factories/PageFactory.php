@@ -7,8 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Page::class, function (Faker $faker) {
     return [
+        'name' => $faker->sentence(rand(2,3)),
         'title' => $faker->sentence(rand(3,8)),
-        'slug' => $faker->slug(),
+        'slug' => $faker->unique()->slug(rand(1,3)),
         'content' => $faker->text(5000),
     ];
 });

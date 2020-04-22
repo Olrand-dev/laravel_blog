@@ -43,13 +43,16 @@ class User extends \TCG\Voyager\Models\User
         return $this->hasMany('App\Entry');
     }
 
+
     public function comments()
     {
         return $this->hasMany('App\Comment');
     }
 
+
     public function votes()
     {
         return $this->hasMany('App\Vote');
     }
+    
 }

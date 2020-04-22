@@ -97,6 +97,37 @@ var app = new Vue({
   el: '#app'
 });
 $(document).ready(function () {
+  $('*[data-slider="slick"]').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    prevArrow: "\n        <button type=\"button\" class=\"btn btn-slider left\">\n            <i class=\"fas fa-chevron-left\"></i>\n        </button>",
+    nextArrow: "\n        <button type=\"button\" class=\"btn btn-slider right\">\n            <i class=\"fas fa-chevron-right\"></i>\n        </button>",
+    responsive: [{
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
+  });
   $(window).resize(function () {
     var siteContent = $('#site-content');
     var siteTopHeight = $('#drop-down-menu').height();

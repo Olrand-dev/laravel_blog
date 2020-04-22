@@ -20,6 +20,7 @@ class CreateEntriesTable extends Migration
             $table->foreignId('user_id')->default(1);
             $table->string('title', 191);
             $table->string('slug', 100);
+            $table->string('image', 191)->nullable();
             $table->text('excerpt')->nullable();
             $table->text('content');
             $table->integer('views')->default(0);

@@ -9,6 +9,7 @@ $factory->define(Entry::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(rand(3,8)),
         'slug' => $faker->slug(),
+        'image' => 'img/card-img.jpg',
         'excerpt' => $faker->paragraph(rand(3,5)),
         'content' => $faker->text(3000),
     ];

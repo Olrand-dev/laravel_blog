@@ -324,6 +324,29 @@ pre[class*="language-"] {
             border-color: $brand-red;
         }
     }
+
+    &.btn-slider {
+        position: absolute;
+        color: $dark;
+        background-color: $grey-light;
+        border-color: $grey-light;
+
+        &:hover {
+            color: $white;
+            background-color: $brand-red;
+            border-color: $brand-red;
+        }
+
+        &.left {
+            top: -54px;
+            right: 22px;
+        }
+
+        &.right {
+            top: -54px;
+            right: -17px;
+        }
+    }
 }
 
 
@@ -414,14 +437,15 @@ pre[class*="language-"] {
 }
 
 
-.content-collection {
-    margin-bottom: 25px;
+.card-collection {
+    margin-bottom: 45px;
+    padding: 0 15px;
 
     .card {
-        padding: 0;
-        max-width: 320px;
+        padding: 0 8px;
         border: none;
         margin-top: 15px;
+        margin-bottom: 10px;
 
         .card-img-top {
             margin-bottom: 15px;

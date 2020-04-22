@@ -21,18 +21,22 @@ class Comment extends Model
         return $this->hasMany(self::class, 'parent_id');
     }
 
+
     public function parent()
     {
         return $this->belongsTo(self::class, 'parent_id');
     }
+
 
     public function entry()
     {
         return $this->belongsTo('App\Entry');
     }
 
+
     public function author()
     {
         return $this->belongsTo('App\User');
     }
+    
 }

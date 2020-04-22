@@ -3,13 +3,13 @@
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 
-Breadcrumbs::for('home', function ($trail) {
-    $trail->push('Home', route('home'));
+Breadcrumbs::for('main_page', function ($trail) {
+    $trail->push('Home', route('main_page'));
 });
 
 Breadcrumbs::for('blog', function ($trail) {
-    $trail->parent('home');
-    $trail->push('Blog', route('blog'));
+    $trail->parent('main-page');
+    $trail->push('Blog', route('entries-list'));
 });
 
 
@@ -30,7 +30,7 @@ Breadcrumbs::for('category-entry', function ($trail, $entry) {
 
 
 Breadcrumbs::for('cources', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('main-page');
     $trail->push('Cources', route('cources'));
 });
 
@@ -51,7 +51,7 @@ Breadcrumbs::for('chapter-entry', function ($trail, $entry) {
 
 
 Breadcrumbs::for('pages', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('main-page');
     $trail->push('Pages');
 });
 
@@ -67,6 +67,6 @@ Breadcrumbs::for('page', function ($trail, $page) {
 
 
 Breadcrumbs::for('contacts', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('main-page');
     $trail->push('Contacts', route('contacts'));
 });

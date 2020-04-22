@@ -34,6 +34,49 @@ const app = new Vue({
 
 $(document).ready(function () {
 
+    $('*[data-slider="slick"]').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        pauseOnHover: false,
+        prevArrow: `
+        <button type="button" class="btn btn-slider left">
+            <i class="fas fa-chevron-left"></i>
+        </button>`,
+        nextArrow: `
+        <button type="button" class="btn btn-slider right">
+            <i class="fas fa-chevron-right"></i>
+        </button>`,
+
+        responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }],
+    });
+
+
     $(window).resize(function () {
         let siteContent = $('#site-content');
         let siteTopHeight = $('#drop-down-menu').height();
@@ -41,7 +84,7 @@ $(document).ready(function () {
 
         let siteContentMarginTop = 12;
         let footerOffset = 138;
-        
+
         if (window.innerWidth > 1199) {
             siteContentMarginTop = siteTopHeight;
         } else {
@@ -55,7 +98,8 @@ $(document).ready(function () {
         siteContent.css('min-height', `${siteContentMinHeight}px`);
     });
 
+
     $(window).scroll(function () {
-        
+
     });
 });

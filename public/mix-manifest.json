@@ -4,5 +4,6 @@
     "/css/vendor.css": "/css/vendor.css",
     "/js/manifest.js": "/js/manifest.js",
     "/js/prism.js": "/js/prism.js",
+    "/js/slick.min.js": "/js/slick.min.js",
     "/js/vendor.js": "/js/vendor.js"
 }

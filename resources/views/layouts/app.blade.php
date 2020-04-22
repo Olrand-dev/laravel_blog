@@ -15,7 +15,6 @@
     <script src="{{ asset('js/manifest.js') }}" defer></script>
     <script src="{{ asset('js/vendor.js') }}" defer></script>
     <script src="{{ asset('js/prism.js') }}" defer></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/vendor.css') }}" rel="stylesheet">
@@ -60,6 +59,10 @@
         </footer>
 
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/slick.min.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
 </body>
 </html>

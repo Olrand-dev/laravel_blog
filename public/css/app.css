@@ -560,6 +560,29 @@ pre[class*=language-] {
   border-color: #FF2B65;
 }
 
+.btn.btn-slider {
+  position: absolute;
+  color: #383838;
+  background-color: #dfdfdf;
+  border-color: #dfdfdf;
+}
+
+.btn.btn-slider:hover {
+  color: #fff;
+  background-color: #FF2B65;
+  border-color: #FF2B65;
+}
+
+.btn.btn-slider.left {
+  top: -54px;
+  right: 22px;
+}
+
+.btn.btn-slider.right {
+  top: -54px;
+  right: -17px;
+}
+
 .content-box {
   border-radius: 0;
   padding: 10px 12px;
@@ -660,67 +683,68 @@ pre[class*=language-] {
   }
 }
 
-.content-collection {
-  margin-bottom: 25px;
+.card-collection {
+  margin-bottom: 45px;
+  padding: 0 15px;
 }
 
-.content-collection .card {
-  padding: 0;
-  max-width: 320px;
+.card-collection .card {
+  padding: 0 8px;
   border: none;
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-.content-collection .card .card-img-top {
+.card-collection .card .card-img-top {
   margin-bottom: 15px;
 }
 
-.content-collection .card .card-title a {
+.card-collection .card .card-title a {
   color: #383838;
 }
 
-.content-collection .card .card-title a:hover {
+.card-collection .card .card-title a:hover {
   color: #FF2B65;
 }
 
-.content-collection .card .card-info div {
+.card-collection .card .card-info div {
   margin-bottom: 3px;
 }
 
-.content-collection .card .card-info .statistics div {
+.card-collection .card .card-info .statistics div {
   margin-left: 10px;
   color: #7e7e7e;
 }
 
-.content-collection .card .card-info .date {
+.card-collection .card .card-info .date {
   color: #b1b1b1;
 }
 
-.content-collection .card .card-info .tags {
+.card-collection .card .card-info .tags {
   color: #FF2B65;
 }
 
-.content-collection .card .card-info .tags i {
+.card-collection .card .card-info .tags i {
   font-size: 16px;
   position: relative;
   top: 4px;
   margin-right: 5px;
 }
 
-.content-collection .card .card-info .tags .tag {
+.card-collection .card .card-info .tags .tag {
   margin-right: 5px;
 }
 
-.content-collection .card .card-info a {
+.card-collection .card .card-info a {
   color: #FF2B65;
   font-weight: 300;
 }
 
-.content-collection .card .card-info a:hover {
+.card-collection .card .card-info a:hover {
   color: #383838;
 }
 
-.content-collection .card .card-text {
+.card-collection .card .card-text {
   margin-top: 5px;
   font-size: 17px;
 }

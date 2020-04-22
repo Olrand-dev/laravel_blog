@@ -15,10 +15,6 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
-Route::get('/', function () {
-    return view('blog.main-page');
-});
-
 Auth::routes();
 
 Route::group(['prefix' => 'admin'], function () {
@@ -26,4 +22,37 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+/**
+ * Blog Routes
+ */
+
+Route::namespace('Blog')->group(function () {
+    
+    Route::get('/', 'MainPageController@index')->name('main_page');
+
+
+    Route::get('/entries/{slug}', 'EntriesController@showEntry')
+        ->name('entry');
+
+    Route::get('/entries/list', 'EntriesController@showList')
+        ->name('entries-list');
+
+    Route::get('/entries/category/{cat_slug}', 'EntriesController@showListByCategory')
+        ->name('entries-list-by-category');
+
+    Route::get('/entries/chapter/{chap_slug}', 'EntriesController@showListByChapter')
+        ->name('entries-list-by-chapter');
+        
+    Route::get('/entries/tag/{tag_slug}', 'EntriesController@showListByTag')
+        ->name('entries-list-by-tag');
+});
+
+
+/**
+ * User Accounts Routes
+ */
+
+Route::namespace('Accounts')->group(function () {
+    
+    Route::get('/home', 'HomeController@index')->name('user_home');
+});

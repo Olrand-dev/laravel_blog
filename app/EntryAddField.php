@@ -20,4 +20,5 @@ class EntryAddField extends Model
     {
         return $this->belongsTo('App\Entry');
     }
+    
 }

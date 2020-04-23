@@ -3,8 +3,8 @@
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 
-Breadcrumbs::for('main_page', function ($trail) {
-    $trail->push('Home', route('main_page'));
+Breadcrumbs::for('main-page', function ($trail) {
+    $trail->push('Home', route('main-page'));
 });
 
 Breadcrumbs::for('blog', function ($trail) {

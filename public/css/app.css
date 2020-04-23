@@ -753,7 +753,7 @@ pre[class*=language-] {
   margin: 15px 0;
 }
 
-.pagination .page-link {
+.pagination .page-item .page-link {
   padding: 14px 20px 10px;
   font-size: 18px;
   font-weight: 600;
@@ -761,26 +761,43 @@ pre[class*=language-] {
   color: #7e7e7e;
 }
 
-.pagination .page-link.active {
+@media screen and (max-width: 1200px) {
+  .pagination .page-item .page-link {
+    display: none;
+  }
+}
+
+.pagination .page-item.mobile .page-link {
+  font-size: 16px;
+  font-weight: 400;
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .pagination .page-item.mobile .page-link {
+    display: block;
+  }
+}
+
+.pagination .page-item.active .page-link {
   background-color: #ff7839;
   border-color: #ff7839;
   color: #fff;
 }
 
-.pagination .page-link.active:hover {
+.pagination .page-item.active .page-link:hover {
   background-color: #ff7839;
   border-color: #ff7839;
 }
 
-.pagination .page-link.inactive,
-.pagination .page-link.inactive:hover {
+.pagination .page-item.disabled .page-link,
+.pagination .page-item.disabled:hover .page-link {
   background-color: #f3f3f3;
   border-color: #dfdfdf;
   color: #dfdfdf;
-  cursor: not-allowed;
 }
 
-.pagination .page-link:hover {
+.pagination .page-item:hover .page-link {
   background-color: #b1b1b1;
   border-color: #b1b1b1;
   color: #fff;

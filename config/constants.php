@@ -6,5 +6,9 @@ return [
             'new_entries_list_size' => 15,
             'pop_entries_list_size' => 15,
         ],
+        'entries_list' => [
+            'per_page_def' => 2,
+            'sort_type_def' => 'date_desc',
+        ],
     ],
 ];

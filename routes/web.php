@@ -28,10 +28,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::namespace('Blog')->group(function () {
     
-    Route::get('/', 'MainPageController@index')->name('main_page');
+    Route::get('/', 'MainPageController@index')->name('main-page');
 
 
-    Route::get('/entries/{slug}', 'EntriesController@showEntry')
+    Route::get('/entry/{slug}', 'EntriesController@showEntry')
         ->name('entry');
 
     Route::get('/entries/list', 'EntriesController@showList')

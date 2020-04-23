@@ -503,14 +503,31 @@ pre[class*="language-"] {
 .pagination {
     margin: 15px 0;
 
-    .page-link {
-        padding: 14px 20px 10px;
-        font-size: 18px;
-        font-weight: 600;
-        border-color: $grey-light;
-        color: $grey-dark;
+    .page-item {
 
-        &.active {
+        .page-link {
+            padding: 14px 20px 10px;
+            font-size: 18px;
+            font-weight: 600;
+            border-color: $grey-light;
+            color: $grey-dark;
+
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+        }
+
+        &.mobile .page-link {
+            font-size: 16px;
+            font-weight: 400;
+            display: none;
+
+            @media screen and (max-width: 1200px) {
+                display: block;
+            }
+        }
+
+        &.active .page-link {
             background-color: $brand-orange-light;
             border-color: $brand-orange-light;
             color: $white;
@@ -520,14 +537,13 @@ pre[class*="language-"] {
             }
         }
 
-        &.inactive, &.inactive:hover {
+        &.disabled .page-link, &.disabled:hover .page-link {
             background-color: $grey-soft;
             border-color: $grey-light;
             color: $grey-light;
-            cursor: not-allowed;
         }
 
-        &:hover {
+        &:hover .page-link {
             background-color: $grey;
             border-color: $grey;
             color: $white;

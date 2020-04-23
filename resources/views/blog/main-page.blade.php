@@ -8,7 +8,7 @@
         
         <div class="card-body">
 
-            {{ Breadcrumbs::render('main_page') }}
+            {{ Breadcrumbs::render('main-page') }}
 
             <x-cards-collection :items="$newEntries" type="slider" title="Новые" />
 

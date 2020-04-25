@@ -511,20 +511,6 @@ pre[class*="language-"] {
             font-weight: 600;
             border-color: $grey-light;
             color: $grey-dark;
-
-            @media screen and (max-width: 1200px) {
-                display: none;
-            }
-        }
-
-        &.mobile .page-link {
-            font-size: 16px;
-            font-weight: 400;
-            display: none;
-
-            @media screen and (max-width: 1200px) {
-                display: block;
-            }
         }
 
         &.active .page-link {
@@ -537,7 +523,8 @@ pre[class*="language-"] {
             }
         }
 
-        &.disabled .page-link, &.disabled:hover .page-link {
+        &.disabled .page-link, 
+        &.disabled:hover .page-link {
             background-color: $grey-soft;
             border-color: $grey-light;
             color: $grey-light;
@@ -549,6 +536,34 @@ pre[class*="language-"] {
             color: $white;
         }
     }
+
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+
+    &.mobile {
+        display: none;
+
+        @media screen and (max-width: 1200px) {
+            display: block;
+        }
+
+        .page-item {
+            display: inline;
+        }
+
+        .page-link {
+            display: inline;
+            font-size: 16px;
+            font-weight: 400;
+
+            @media screen and (max-width: 400px) {
+                padding: 10px 7px 9px;
+                font-size: 14px;
+            }
+        }
+    }
+
 }
 
 

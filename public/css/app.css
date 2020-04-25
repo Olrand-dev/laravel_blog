@@ -761,24 +761,6 @@ pre[class*=language-] {
   color: #7e7e7e;
 }
 
-@media screen and (max-width: 1200px) {
-  .pagination .page-item .page-link {
-    display: none;
-  }
-}
-
-.pagination .page-item.mobile .page-link {
-  font-size: 16px;
-  font-weight: 400;
-  display: none;
-}
-
-@media screen and (max-width: 1200px) {
-  .pagination .page-item.mobile .page-link {
-    display: block;
-  }
-}
-
 .pagination .page-item.active .page-link {
   background-color: #ff7839;
   border-color: #ff7839;
@@ -801,6 +783,39 @@ pre[class*=language-] {
   background-color: #b1b1b1;
   border-color: #b1b1b1;
   color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  .pagination {
+    display: none;
+  }
+}
+
+.pagination.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .pagination.mobile {
+    display: block;
+  }
+}
+
+.pagination.mobile .page-item {
+  display: inline;
+}
+
+.pagination.mobile .page-link {
+  display: inline;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 400px) {
+  .pagination.mobile .page-link {
+    padding: 10px 7px 9px;
+    font-size: 14px;
+  }
 }
 
 .vertical-menu {

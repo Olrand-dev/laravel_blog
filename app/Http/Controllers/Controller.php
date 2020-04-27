@@ -26,4 +26,19 @@ class Controller extends BaseController
             'direction' => $parts[1],
         ];
     }
+
+
+    protected function apiResponse(
+        string $status = 'success', 
+        array $messages = [], 
+        array $data = []
+    )
+    {
+        return [
+            'status' => $status,
+            'messages' => $messages,
+            'data' => $data,
+        ];
+    }
+    
 }

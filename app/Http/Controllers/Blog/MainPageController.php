@@ -17,14 +17,10 @@ class MainPageController extends BlogBaseController
         $newListSize = Config::get('constants.blog.main_page.new_entries_list_size');
         $popListSize = Config::get('constants.blog.main_page.pop_entries_list_size');
 
-        $newEntries = Entry::with(['category', 'tags'])
-            ->withCount('comments')
-            ->orderBy('created_at', 'desc')
+        $newEntries = $this->getEntriesBuilder('created_at')
             ->take($newListSize)
             ->get();
-        $popularEntries = Entry::with(['category', 'tags'])
-            ->withCount('comments')
-            ->orderBy('views', 'desc')
+        $popularEntries = $this->getEntriesBuilder('views')
             ->take($popListSize)
             ->get();
         

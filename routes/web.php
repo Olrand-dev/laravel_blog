@@ -45,6 +45,9 @@ Route::namespace('Blog')->group(function () {
         
     Route::get('/entries/tag/{tag_slug}', 'EntriesController@showListByTag')
         ->name('entries-list-by-tag');
+
+    //API
+    Route::post('/entries/api/update-show-settings', 'EntriesController@updateShowSettings');
 });
 
 

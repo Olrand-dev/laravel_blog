@@ -1,8 +1,10 @@
 @props(['items', 'type', 'title'])
 
-<div class="box-header">
-    {{ $title }}
-</div>
+@if (!empty($title))
+    <div class="box-header">
+        {{ $title }}
+    </div>
+@endif
 
 @if ($type == 'simple')
 

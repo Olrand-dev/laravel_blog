@@ -15,6 +15,15 @@ class BlogBaseController extends Controller
         'entries_sort_type' => 'string',
         'entries_per_page' => 'int',
     ];
+
+
+    protected function getOneEntry(string $slug) : Entry
+    {
+        return Entry::where('slug', 'like', $slug)
+            ->withCount('comments')
+            ->with(['category', 'chapter', 'tags'])
+            ->first();
+    }
     
 
     /**
@@ -30,22 +39,34 @@ class BlogBaseController extends Controller
         array $options = []
     ) : Builder
     {
-        $container = $options['container'] ?? '';
+        $containerType = $options['container_type'] ?? '';
         $builder = null;
 
-        if ($container !== '') {
+        if ($containerType !== '') {
             $slug = $options['container_slug'];
 
-            switch ($container) {
+            switch ($containerType) {
                 case 'category': {
                     $builder = Entry::whereHas('category', function (Builder $query) use ($slug) {
                         $query->where('slug', 'like', $slug);
                     });
                     break;
                 }
+                case 'chapter': {
+                    $builder = Entry::whereHas('chapter', function (Builder $query) use ($slug) {
+                        $query->where('slug', 'like', $slug);
+                    });
+                    break;
+                }
+                case 'tag': {
+                    $builder = Entry::whereHas('tags', function (Builder $query) use ($slug) {
+                        $query->where('slug', 'like', $slug);
+                    });
+                    break;
+                }
             }
 
-            $builder = $builder->with(['category', 'tags']);
+            $builder = $builder->with(['category', 'chapter', 'tags']);
                 
         } else {
             $builder = Entry::with(['category', 'tags']);

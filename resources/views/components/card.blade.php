@@ -1,4 +1,4 @@
-@props(['data'])
+@props(['data', 'parent-container'])
 
 <div {{ $attributes->merge(['class' => 'card']) }}>
 
@@ -17,26 +17,25 @@
         <div class="card-info">
             <div class="row">
 
-                <div class="col-12 category">
-                    <a href="{{ route('entries-list-by-category', $data->category->slug) }}">
-                        {{ $data->category->name }}
-                    </a>
-                </div>
+                @if (isset($parentContainer) and $parentContainer === 'chapter')
+                    <div class="col-12 chapter">
+                        <a href="{{ route('entries-list-by-chapter', $data->chapter->slug) }}">
+                            <i class="fas fa-book"></i>
+                            {{ $data->chapter->name }}
+                        </a>
+                    </div>  
+                @else 
+                    <div class="col-12 category">
+                        <a href="{{ route('entries-list-by-category', $data->category->slug) }}">
+                            <i class="fas fa-folder"></i>
+                            {{ $data->category->name }}
+                        </a>
+                    </div>
+                @endif
 
                 <div class="col-12 date">{{ $data->date }}</div>
 
-                <div class="col-12 d-flex justify-content-start">
-                    <div class="tags d-flex flex-row">
-                        <i class="fas fa-tags"></i>
-                        @foreach ($data->tags as $tag)
-                            <div class="tag">
-                                <a href="{{ route('entries-list-by-tag', $tag->slug) }}">
-                                    {{ $tag->name }}
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
+                <x-entry-tags :tags-data="$data->tags" />
 
                 <div class="statistics col-12 d-flex justify-content-end">
                     <div class="views">

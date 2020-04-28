@@ -1,4 +1,4 @@
-@props(['items', 'type', 'title'])
+@props(['items', 'type', 'title', 'container'])
 
 @if (!empty($title))
     <div class="box-header">
@@ -6,13 +6,13 @@
     </div>
 @endif
 
-@if ($type == 'simple')
+@if ($type === 'simple')
 
     <div class="row card-collection">
 
         @foreach ($items as $item)
 
-            <x-card :data="$item" class="col-md-6 col-lg-4 col-xl-3" />
+            <x-card :data="$item" class="col-md-6 col-lg-4 col-xl-3" :parent-container="$container" />
             
         @endforeach
 

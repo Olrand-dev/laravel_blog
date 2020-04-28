@@ -20,13 +20,13 @@ Breadcrumbs::for('category', function ($trail, $category) {
         $trail->parent('blog');
     }
 
-    $trail->push($category->title, route('category', $category->slug));
+    $trail->push($category->name, route('entries-list-by-category', $category->slug));
 });
 
-Breadcrumbs::for('category-entry', function ($trail, $entry) {
+/* Breadcrumbs::for('entry', function ($trail, $entry) {
     $trail->parent('category', $entry->category);
     $trail->push($entry->title, route('entry', $entry->slug));
-});
+}); */
 
 
 Breadcrumbs::for('cources', function ($trail) {
@@ -41,12 +41,7 @@ Breadcrumbs::for('chapter', function ($trail, $chapter) {
         $trail->parent('cources');
     }
 
-    $trail->push($chapter->title, route('chapter', $chapter->slug));
-});
-
-Breadcrumbs::for('chapter-entry', function ($trail, $entry) {
-    $trail->parent('chapter', $entry->chapter);
-    $trail->push($entry->title, route('entry', $entry->slug));
+    $trail->push($chapter->name, route('entries-list-by-chapter', $chapter->slug));
 });
 
 

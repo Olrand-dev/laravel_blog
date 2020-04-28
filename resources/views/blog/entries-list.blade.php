@@ -8,9 +8,11 @@
         
         <div class="card-body">
 
-            {{ Breadcrumbs::render('blog') }}
-
             @if (in_array($listType, ['category', 'chapter', 'tag']))
+
+                @if ($listType === 'category' or $listType === 'chapter')
+                    {{ Breadcrumbs::render($listType, $options['container_model']) }}
+                @endif
 
                 <p>
                     @if ($listType === 'category')
@@ -20,7 +22,7 @@
                     @elseif ($listType === 'tag')
                         Тег
                     @endif
-                    : <b>{{ $options['container_name'] }}</b>
+                    : <b>{{ $options['container_model']->name }}</b>
                 </p>
 
                 <entries-list-tools update-url="{{ route($routeName, $options['container_slug']) }}"
@@ -28,12 +30,14 @@
 
             @else 
 
+                {{ Breadcrumbs::render('blog') }}
+
                 <entries-list-tools update-url="{{ route($routeName) }}"
                     sort-type="{{ $sortType }}" per-page="{{ $perPage }}"></entries-list-tools>
 
             @endif
 
-            <x-cards-collection :items="$entries" type="simple" />
+            <x-cards-collection :items="$entries" type="simple" :container="$listType" />
 
             {{ $entries->appends(['sort' => $sortType, 'per_page' => $perPage])
                 ->onEachSide(2)

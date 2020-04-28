@@ -21,6 +21,16 @@
         }
     }
 }
+@mixin add-link-style {
+    a {
+        color: $brand-red;
+        font-weight: 300;
+
+        &:hover {
+            color: $dark;
+        }
+    }
+}
 
 
 body {
@@ -482,14 +492,8 @@ pre[class*="language-"] {
                     margin-right: 5px;
                 }
             }
-            a {
-                color: $brand-red;
-                font-weight: 300;
-
-                &:hover {
-                    color: $dark;
-                }
-            }
+            
+            @include add-link-style;
         }
 
         .card-text {
@@ -564,6 +568,33 @@ pre[class*="language-"] {
         }
     }
 
+}
+
+
+.entry {
+
+    .entry-info {
+        border-left: 5px solid $grey-light;
+        padding-left: 0;
+
+        @include add-link-style;
+
+        > div {
+            color: $grey-dark;
+        }
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    h1 {
+        margin-top: 30px;
+    }
+
+    .entry-content {
+        margin-top: 20px;
+    }
 }
 
 

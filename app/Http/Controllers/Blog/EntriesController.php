@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Blog;
 
 use App\Category;
 use App\Chapter;
-use App\Entry;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -15,7 +14,7 @@ class EntriesController extends BlogBaseController
 
     public function showEntry($slug)
     {
-        $entry = Entry::where('slug', 'like', $slug)->first();
+        $entry = $this->getOneEntry($slug);
         return view('blog.entry', compact('entry'));
     }
 
@@ -35,7 +34,7 @@ class EntriesController extends BlogBaseController
             Config::get('constants.blog.entries_list.sort_type_def');
 
         $sort = $this->parseSortType($sortType);
-        $listType = $options['container'] ?? 'all';
+        $listType = $options['container_type'] ?? 'all';
         $routeName = $options['route_name'] ?? 'entries-list';
 
         $entries = $this->getEntriesBuilder($sort['field'], $sort['direction'], $options)
@@ -54,12 +53,10 @@ class EntriesController extends BlogBaseController
 
     private function showListByContainer(Request $request, $type, $slug, $model)
     {
-        $name = $model::where('slug', 'like', $slug)->first()->name;
-
         return $this->showList($request, [
-            'container' => $type,
+            'container_type' => $type,
             'container_slug' => $slug,
-            'container_name' => $name,
+            'container_model' => $model::where('slug', 'like', $slug)->first(),
             'route_name' => 'entries-list-by-' . $type,
         ]);
     }
